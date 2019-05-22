@@ -4,34 +4,52 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-public class SolicitudinfoBBDD {
+public class SolicitudinfoBBDD {//clase usada para obtener la informacion del login , en desuso
 	
-	//ArrayList<String> usuarios = new ArrayList<String>();
+	private ArrayList<String> usuarios = new ArrayList<String>();
 	
-	//ArrayList<String> contrasenas = new ArrayList<String>();
+	private ArrayList<String> contrasenas = new ArrayList<String>();
+	
+	
 
-	static ArrayList<String> loginobtenernombre () {//2 array list, 2 funciones que añadan nombre 
+	 ArrayList<String> loginobtenernombre () {//2 array list, 2 funciones que añadan nombre 
 		ArrayList<String> usuarios = new ArrayList<String>();
-		ResultSet resultado = Conexion.EjecutarSentencia("SELECT nombre FROM usuario ");
+		ResultSet resultado = Conexion.EjecutarSentencia("SELECT Nombre FROM usuario ");
 		try {
 			while(resultado.next()){
-				usuarios.add(resultado.getString("nombre"));
+				usuarios.add(resultado.getString("Nombre"));
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		return usuarios;
 	}
-	static ArrayList<String> loginobtenercontra () {//2 array list, 2 funciones que añadan nombre 
+	 ArrayList<String> loginobtenercontra () {//2 array list, 2 funciones que añadan nombre 
 		ArrayList<String> contrasenas = new ArrayList<String>();
-		ResultSet resultado = Conexion.EjecutarSentencia("SELECT contraseña FROM usuario");
+		ResultSet resultado = Conexion.EjecutarSentencia("SELECT Contraseña FROM usuario");
 		try {
 			while(resultado.next()){
-				contrasenas.add(resultado.getString("contraseña"));
+				contrasenas.add(resultado.getString("Contraseña"));
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		return contrasenas;
 	}
+	 public SolicitudinfoBBDD() {
+		 
+	 }
+	public ArrayList<String> getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(ArrayList<String> usuarios) {
+		this.usuarios = usuarios;
+	}
+	public ArrayList<String> getContrasenas() {
+		return contrasenas;
+	}
+	public void setContrasenas(ArrayList<String> contrasenas) {
+		this.contrasenas = contrasenas;
+	}
+	 
 }

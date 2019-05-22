@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-public class Metodosloguin {
+public class Metodosloguin {// esta clase esta diseñada para conectarse a un usuario, actualmente en desuso por falta de tiempo
  Conexion metodosConexion = new Conexion();
  public int validar_ingreso(){
 	 String usuario = InterfazJuego.Intusuario.getText();

@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazinfoHondero extends JFrame {
+public class InterfazinfoHondero extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -64,11 +64,15 @@ public class InterfazinfoHondero extends JFrame {
 		lblUnidadEquipadaCon.setBounds(169, 443, 390, 16);
 		contentPane.add(lblUnidadEquipadaCon);
 		
-		JLabel lblNewLabel_1 = new JLabel("420");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderHondero();
+		JLabel lblNewLabel_1 = new JLabel(poder+"");
 		lblNewLabel_1.setBounds(174, 490, 56, 16);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel label = new JLabel("80");
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesHondero();
+		JLabel label = new JLabel(numero+"");
 		label.setBounds(169, 545, 56, 16);
 		contentPane.add(label);
 		
@@ -76,7 +80,7 @@ public class InterfazinfoHondero extends JFrame {
 		lblCosto.setBounds(75, 599, 56, 16);
 		contentPane.add(lblCosto);
 		
-		JLabel label_1 = new JLabel("500");
+		JLabel label_1 = new JLabel("no definido");
 		label_1.setBounds(169, 599, 56, 16);
 		contentPane.add(label_1);
 		

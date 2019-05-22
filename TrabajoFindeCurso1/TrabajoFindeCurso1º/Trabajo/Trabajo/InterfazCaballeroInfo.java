@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazCaballeroInfo extends JFrame {
+public class InterfazCaballeroInfo extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -74,15 +74,19 @@ public class InterfazCaballeroInfo extends JFrame {
 		lblUnidadDeEspadachines.setBounds(235, 473, 641, 16);
 		contentPane.add(lblUnidadDeEspadachines);
 		
-		JLabel label_1 = new JLabel("490");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderCaballero();
+		JLabel label_1 = new JLabel(poder+"");
 		label_1.setBounds(235, 526, 56, 16);
 		contentPane.add(label_1);
 		
-		JLabel label_2 = new JLabel("35");
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesCaballero();
+		JLabel label_2 = new JLabel(numero+"");
 		label_2.setBounds(235, 587, 56, 16);
 		contentPane.add(label_2);
 		
-		JLabel label_3 = new JLabel("650");
+		JLabel label_3 = new JLabel("no implementado");
 		label_3.setBounds(235, 631, 56, 16);
 		contentPane.add(label_3);
 		

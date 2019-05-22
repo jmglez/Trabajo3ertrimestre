@@ -17,37 +17,21 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class InterfazEjercitoAzul extends JFrame {
-
+public class InterfazEjercitoAzul extends JFrame {//esta clase esta diseñada para seleccionar las unidades y reunir todo el poder en la clase principal
+	private JLabel LblNewLabel_2;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_1;
+	int poderespadachin,poderarquero,poderhondero,poderlancero,poderpiquero,podercaballero,podertotalactualazul;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InterfazEjercitoAzul frame = new InterfazEjercitoAzul();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
+	Ejercitoazul ejercitoazul = new Ejercitoazul(0,0,0,0,0,0);
+	
+	
+	
 	public InterfazEjercitoAzul() {
-		setTitle("TONTO QUIEM LO LEA");
+		setTitle("");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 616, 523);
 		contentPane = new JPanel();
@@ -55,39 +39,47 @@ public class InterfazEjercitoAzul extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		SelecciondeEjercitos ejercitoazul2 = new SelecciondeEjercitos();
+		ejercitoazul2.setVisible(true);
+		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Espadachin.jpg"));
 		btnNewButton_1.setBounds(105, 106, 97, 93);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
 		btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\arquero.jpg"));
 		btnNewButton_2.setBounds(105, 228, 97, 85);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("");
+		
 		btnNewButton_3.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Hondero.jpg"));
 		btnNewButton_3.setBounds(105, 338, 97, 83);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("");
+		
 		btnNewButton_4.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Lancero.jpg"));
 		btnNewButton_4.setBounds(398, 106, 97, 93);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("");
+		
 		btnNewButton_5.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Piquero.jpg"));
 		btnNewButton_5.setBounds(398, 228, 97, 85);
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("");
+		
 		btnNewButton_6.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Caballeria.jpg"));
 		btnNewButton_6.setBounds(398, 338, 102, 83);
 		contentPane.add(btnNewButton_6);
-		
-		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(92, 438, 97, 25);
-		contentPane.add(btnGuardar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(246, 438, 97, 25);
@@ -138,7 +130,7 @@ public class InterfazEjercitoAzul extends JFrame {
 		JButton btnInfo = new JButton("info");
 		btnInfo.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent e) {//esto habre el marco para mostrar la info de la unidad predeterminada
 				InterfazEspadachin interfazespadachin = new InterfazEspadachin();
 				interfazespadachin.setVisible(true);
 			}
@@ -201,34 +193,122 @@ public class InterfazEjercitoAzul extends JFrame {
 		button_4.setBounds(289, 387, 97, 25);
 		contentPane.add(button_4);
 		
-		textField = new JTextField();
-		textField.setBounds(214, 149, 56, 22);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		JLabel lblNewLabel_1 = new JLabel("0");
+		lblNewLabel_1.setBounds(214, 152, 56, 16);
+		contentPane.add(lblNewLabel_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(214, 276, 56, 22);
-		contentPane.add(textField_2);
+		JLabel lblNewLabel_2 = new JLabel("0");
+		lblNewLabel_2.setBounds(214, 262, 56, 16);
+		contentPane.add(lblNewLabel_2);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(214, 370, 56, 22);
-		contentPane.add(textField_3);
+		JLabel lblNewLabel_3 = new JLabel("0");
+		lblNewLabel_3.setBounds(214, 373, 56, 16);
+		contentPane.add(lblNewLabel_3);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(507, 275, 56, 22);
-		contentPane.add(textField_4);
+		JLabel lblNewLabel_4 = new JLabel("0");
+		lblNewLabel_4.setBounds(517, 152, 56, 16);
+		contentPane.add(lblNewLabel_4);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(509, 370, 56, 22);
-		contentPane.add(textField_5);
+		JLabel lblNewLabel_5 = new JLabel("0");
+		lblNewLabel_5.setBounds(517, 262, 56, 16);
+		contentPane.add(lblNewLabel_5);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(507, 149, 56, 22);
-		contentPane.add(textField_1);
+		JLabel lblNewLabel_6 = new JLabel("0");
+		lblNewLabel_6.setBounds(517, 391, 56, 16);
+		contentPane.add(lblNewLabel_6);
+		
+		JButton btnCrearUnidades = new JButton("Crear unidades");
+		btnCrearUnidades.setBounds(83, 438, 119, 25);
+		contentPane.add(btnCrearUnidades);
+		
+		
+		Datos dato1 = new Datos();
+	btnNewButton_1.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent arg0 ) {//esta funcion hace el recuento de unidades y las suma a un contador
+			ejercitoazul.setContadorespadachinazul(ejercitoazul.getContadorespadachinazul()+1);
+			lblNewLabel_1.setText(Integer.toString(ejercitoazul.getContadorespadachinazul()));
+		
+		 poderespadachin=dato1.getPoderEspadachin();//esta linea de abajo recoje el int con toda la informacion y la tronsforma en un jtxt		
+		 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+		
+		podertotalactualazul +=poderespadachin;
+		String poderespadachintxt = Integer.toString(podertotalactualazul);//en desuso
+		ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;//esta linea te añade el poder al main
+		System.out.println(podertotalactualazul);
+		
+			}
+		});
+	btnNewButton_2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent arg0) {
+				ejercitoazul.setContadorarqueroazul(ejercitoazul.getContadorarqueroazul()+1);
+				lblNewLabel_2.setText(Integer.toString(ejercitoazul.getContadorarqueroazul()));
+				
+				 poderarquero=dato1.getPoderArquero();		
+				 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+				
+				podertotalactualazul +=poderarquero;
+				String poderespadachintxt = Integer.toString(podertotalactualazul);
+				ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;
+				System.out.println(podertotalactualazul);
+			}
+		});
+	btnNewButton_3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				ejercitoazul.setContadorhonderoazul(ejercitoazul.getContadorhonderoazul()+1);
+				lblNewLabel_3.setText(Integer.toString(ejercitoazul.getContadorhonderoazul()));
+				
+				poderhondero=dato1.getPoderHondero();		
+				 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+				
+				podertotalactualazul +=poderhondero;
+				String poderespadachintxt = Integer.toString(podertotalactualazul);
+				ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;
+				System.out.println(podertotalactualazul);
+				
+			}
+		});
+	btnNewButton_4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				ejercitoazul.setContadorlanceroazul(ejercitoazul.getContadorlanceroazul()+1);
+				lblNewLabel_4.setText(Integer.toString(ejercitoazul.getContadorlanceroazul()));
+				
+
+				 poderlancero=dato1.getPoderLancero();		
+				 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+				
+				podertotalactualazul +=poderlancero;
+				String poderespadachintxt = Integer.toString(podertotalactualazul);
+				ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;
+				System.out.println(podertotalactualazul);
+			}
+		});
+	btnNewButton_5.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				ejercitoazul.setContadorpiqueroazul(ejercitoazul.getContadorpiqueroazul()+1);
+				lblNewLabel_5.setText(Integer.toString(ejercitoazul.getContadorpiqueroazul()));
+				
+				poderpiquero=dato1.getPoderPiquero();		
+				 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+				
+				podertotalactualazul +=poderpiquero;
+				String poderespadachintxt = Integer.toString(podertotalactualazul);
+				ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;
+				System.out.println(podertotalactualazul);
+			}
+		});
+	btnNewButton_6.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				ejercitoazul.setContadorcaballeriaazul(ejercitoazul.getContadorcaballeriaazul()+1);
+				lblNewLabel_6.setText(Integer.toString(ejercitoazul.getContadorcaballeriaazul()));
+				
+				podercaballero=dato1.getPoderCaballero();		
+				 podertotalactualazul= Integer.parseInt(ejercitoazul2.getLblNewLabel_2().getText());
+				
+				podertotalactualazul +=podercaballero;
+				String poderespadachintxt = Integer.toString(podertotalactualazul);
+				ejercitoazul2.setTextLblNewLabel_2(podertotalactualazul +"");;
+				System.out.println(podertotalactualazul);
+			}
+		});
 	}
 }

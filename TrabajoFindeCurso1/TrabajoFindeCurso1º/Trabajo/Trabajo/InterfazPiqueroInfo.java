@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazPiqueroInfo extends JFrame {
+public class InterfazPiqueroInfo extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -74,15 +74,19 @@ public class InterfazPiqueroInfo extends JFrame {
 		lblNewLabel_5.setBounds(176, 420, 390, 16);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("390");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderPiquero();
+		JLabel lblNewLabel_6 = new JLabel(poder+"");
 		lblNewLabel_6.setBounds(176, 463, 56, 16);
 		contentPane.add(lblNewLabel_6);
 		
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesPiquero();
 		JLabel lblNewLabel_7 = new JLabel("100");
 		lblNewLabel_7.setBounds(176, 515, 56, 16);
 		contentPane.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("375");
+		JLabel lblNewLabel_8 = new JLabel("no implementado");
 		lblNewLabel_8.setBounds(176, 572, 56, 16);
 		contentPane.add(lblNewLabel_8);
 		

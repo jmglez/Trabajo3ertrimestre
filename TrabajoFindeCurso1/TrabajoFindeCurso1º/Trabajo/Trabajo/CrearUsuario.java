@@ -1,7 +1,7 @@
 package Trabajo;
 
 
-public class CrearUsuario  extends Usuario {
+public class CrearUsuario  extends Usuario {//clase en desuso 
 	private int idUsuario;
 	private String Usuario;
 	private String Contraseña;

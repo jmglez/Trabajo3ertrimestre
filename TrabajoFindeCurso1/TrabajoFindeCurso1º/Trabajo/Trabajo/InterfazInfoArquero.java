@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazInfoArquero extends JFrame {
+public class InterfazInfoArquero extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -67,11 +67,15 @@ public class InterfazInfoArquero extends JFrame {
 		lblUnidadEquipadaCon.setBounds(173, 466, 452, 16);
 		contentPane.add(lblUnidadEquipadaCon);
 		
-		JLabel lblNewLabel = new JLabel("400");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderArquero();
+		JLabel lblNewLabel = new JLabel(poder+"");
 		lblNewLabel.setBounds(173, 504, 56, 16);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("90");
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesArquero();
+		JLabel label = new JLabel(numero+"");
 		label.setBounds(173, 533, 56, 16);
 		contentPane.add(label);
 		

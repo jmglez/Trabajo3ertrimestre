@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazLanceroInfo extends JFrame {
+public class InterfazLanceroInfo extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -74,15 +74,19 @@ public class InterfazLanceroInfo extends JFrame {
 		lblUnidadEquipadaCon.setBounds(260, 430, 470, 16);
 		contentPane.add(lblUnidadEquipadaCon);
 		
-		JLabel label_1 = new JLabel("330");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderLancero();
+		JLabel label_1 = new JLabel(poder+"");
 		label_1.setBounds(260, 493, 56, 16);
 		contentPane.add(label_1);
 		
-		JLabel label_2 = new JLabel("120");
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesLancero();
+		JLabel label_2 = new JLabel(numero+"");
 		label_2.setBounds(260, 558, 56, 16);
 		contentPane.add(label_2);
 		
-		JLabel label_3 = new JLabel("200");
+		JLabel label_3 = new JLabel("no implementado");
 		label_3.setBounds(260, 622, 56, 16);
 		contentPane.add(label_3);
 		

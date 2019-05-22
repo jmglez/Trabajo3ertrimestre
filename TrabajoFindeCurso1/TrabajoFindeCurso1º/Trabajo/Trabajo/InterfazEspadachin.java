@@ -13,7 +13,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazEspadachin extends JFrame {
+public class InterfazEspadachin extends JFrame {//este frame se usa para proporcionar datos sobre la unidadad predeterminadas
 
 	private JPanel contentPane;
 
@@ -46,7 +46,7 @@ public class InterfazEspadachin extends JFrame {
 		
 		JLabel lblEspadero = new JLabel("Espadero");
 		lblEspadero.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblEspadero.setBounds(332, 24, 97, 16);
+		lblEspadero.setBounds(332, 24, 97, 25);
 		contentPane.add(lblEspadero);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion:");
@@ -65,13 +65,18 @@ public class InterfazEspadachin extends JFrame {
 		lblUnidadEquipadaCon.setBounds(322, 523, 305, 42);
 		contentPane.add(lblUnidadEquipadaCon);
 		
-		JLabel lblNewLabel = new JLabel("350");
+		Datos datopoder = new Datos();
+		int poder= datopoder.getPoderEspadachin();
+		JLabel lblNewLabel = new JLabel(poder+"");
 		lblNewLabel.setBounds(332, 565, 56, 16);
 		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("120");
+		//lblNewLabel.setText(Integer.toString(Datos.getPoderEspadachin()));
+		Datos datonumero = new Datos();
+		int numero= datonumero.getNunidadesEspadachin();
+		JLabel lblNewLabel_1 = new JLabel(numero+"");
 		lblNewLabel_1.setBounds(342, 594, 56, 16);
 		contentPane.add(lblNewLabel_1);
+		//lblNewLabel_1.setText(Integer.toString(Datos.getNunidadesEspadachin()));
 		
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\josem\\OneDrive\\Desktop\\Grandes_Espaderos_info.jpg"));
